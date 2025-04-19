@@ -1,0 +1,78 @@
+/* 기본 스타일 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* 전체 화면을 사용하며 최소 마진 유지 */
+header, main, section, footer {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* 메인 섹션 스타일 */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 반응형 비디오 사이즈 조절 */
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 정보 및 카테고리 섹션 스타일 */
+.information, .category {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 버튼 기본 스타일 */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+    header, main, section {
+        padding: 10px;
+    }
+
+    .main_word button, .extend_word button {
+        width: 100%; /* 버튼을 전체 너비로 확장 */
+        margin-top: 10px;
+    }
+
+    iframe {
+        height: 215px; /* 모바일 화면에서 비디오 높이 조절 */
+    }
+}
+
+/* 모바일 화면에서의 추가 조정 */
+@media (max-width: 480px) {
+    .main_word button, .extend_word button {
+        font-size: 16px; /* 더 큰 폰트 사이즈로 버튼 읽기 쉽게 조정 */
+    }
+}
