@@ -90,17 +90,78 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /** 단어 버튼 클릭 시 main.html 이동 **/
-    const wordButtons = document.querySelectorAll('button.word');
-    wordButtons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-            window.location.href = 'main.html'; // main.html 경로에 맞게 설정
-        });
-    });
     const soundButtons = document.querySelectorAll('button.sound');
     soundButtons.forEach((btn) => {
         btn.addEventListener('click', () => {
             alert("예문을 읽습니다.");
+        });
+    });
+
+    const quizButtons = document.querySelectorAll('.quiz-submit');
+    quizButtons.forEach((btn) => {
+        btn.addEventListener('click', handleQuizSubmit);
+    });
+
+    const quizInputs = document.querySelectorAll('.quiz-input');
+    quizInputs.forEach((input) => {
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const footer = input.closest('.slide_footer');
+
+                // ✅ 중복 처리 방지
+                if (!footer || footer.classList.contains('processing')) return;
+
+                const btn = footer.querySelector('.quiz-submit');
+                if (btn) btn.click();
+            }
+        });
+    });
+
+    function handleQuizSubmit(e) {
+        const btn = e.currentTarget;
+        const footer = btn.closest('.slide_footer');
+        if (!footer || footer.classList.contains('processing')) return;
+
+        // ✅ 잠깐 processing 상태로 막음
+        footer.classList.add('processing');
+
+        const input = footer.querySelector('.quiz-input');
+        const answer = input.dataset.answer?.trim() || '';
+        const userAnswer = input.value.trim();
+
+        const isCorrect = userAnswer.toLowerCase().includes(answer.toLowerCase());
+
+        if (isCorrect) {
+            alert("정답입니다!");
+
+            const slide = btn.closest('.slide_quiz');
+            const mainText = slide.querySelector('.slide_main_text');
+            const image = slide.querySelector('.slide_main_image');
+            if (image) image.remove();
+
+            const explanation = document.createElement('div');
+            explanation.className = 'quiz-explanation';
+            explanation.innerText = `✅ 정답은 "${answer}"입니다. 잘 하셨어요!`;
+            mainText.appendChild(explanation);
+
+            footer.style.display = 'none';
+        } else {
+            alert("정답이 아닙니다. 다시 시도해보세요.");
+        }
+
+        // ✅ 처리 완료 후 상태 초기화
+        setTimeout(() => {
+            footer.classList.remove('processing');
+        }, 300); // 0.3초 후 초기화
+    }
+
+    const buttons = document.querySelectorAll('.category-btn');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.id + '.html';
+            window.location.href = target;
         });
     });
 });

@@ -1,0 +1,25 @@
+{
+    "category": "grammer",
+    "introTitle": "은행에서 쓰이는<br>문법 표현 배우기",
+    "introText": "‘-는 동안’, ‘부터’ 같은 문법을 배워봐요!",
+    "words": {
+      "main": ["-는 동안", "부터", "-기 전에"],
+      "extend": ["-고 나서", "-아/어서"]
+    },
+    "title": "-는 동안",
+    "slides": [
+      {
+        "type": "image",
+        "subtitle": "은행에서 기다리는 동안...",
+        "image": "images/during_wait.png",
+        "text": "‘기다리는 동안 책을 읽었어요.’처럼 ‘-는 동안’은 두 행동이 동시에 일어날 때 사용해요."
+      },
+      {
+        "type": "quiz",
+        "subtitle": "다음 문장에 알맞은 문법은?",
+        "text": "Q: 나는 돈을 <u>___</u> 전화를 받았어요.",
+        "answer": "-기 전에"
+      }
+    ]
+  }
+  

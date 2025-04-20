@@ -1,0 +1,87 @@
+{
+    "category": "word",
+    "introTitle": "은행에서 사용하는<br>필수 어휘 배우기",
+    "introText": "은행에서 사용하는 단어를 공부해요!",
+    "words": {
+      "main": ["체크카드", "비밀번호", "잠시"],
+      "extend": ["환전", "계좌번호"]
+    },
+    "entries": [
+        {
+            "title": "체크카드", 
+            "slides": [
+                {
+                    "type": "image",
+                    "subtitle": "물건을 살 때 돈 대신 사용하는 작은 카드를 본 적이 있어요?",
+                    "image": "images/Testimg.jpg",
+                    "text": "은행에서 만드는 작은 카드로,<br>물건을 살 때 바로 돈이 은행에서 나와요!"
+                },
+                {
+                    "type": "video",
+                    "videoUrl": "https://www.youtube.com/embed/OZytLLasceA?si=bFDr8KR3LxrnEzOJ",
+                    "text": "<strong>체크카드</strong>는 은행에서 만드는 카드에요.<br><br>물건을 살 때 현금을 내지 않고, 이 카드를 사용하면<br>은행에 있는 내 돈이 빠져나가요.<br><br>돈이 부족하면 사용할 수 없어요."
+                },
+                {
+                    "type": "image",
+                    "subtitle": "예문을 확인해 봐요",
+                    "image": "images/Testimg.jpg",
+                    "text": "여자아이가 편의점에서 체크카드로 과자를 샀어요",
+                    "sound": true
+                },
+                {
+                    "type": "quiz",
+                    "subtitle": "연습을 해보아요!",
+                    "image": "images/Testimg.jpg",
+                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 남자아이가 무엇으로 계산했어요?",
+                    "answer": "체크카드"
+                },
+                {
+                    "type": "quiz",
+                    "subtitle": "연습을 해보아요!",
+                    "image": "images/Testimg.jpg",
+                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 주스를 무엇으로 샀어요?",
+                    "answer": "체크카드"
+                }
+            ]
+        },
+        {
+            "title": "비밀번호", 
+            "slides": [
+                {
+                    "type": "image",
+                    "subtitle": "물건을 살 때 돈 대신 사용하는 작은 카드를 본 적이 있어요?",
+                    "image": "images/Testimg.jpg",
+                    "text": "은행에서 만드는 작은 카드로,<br>물건을 살 때 바로 돈이 은행에서 나와요!"
+                },
+                {
+                    "type": "video",
+                    "videoUrl": "https://www.youtube.com/embed/OZytLLasceA?si=bFDr8KR3LxrnEzOJ",
+                    "text": "<strong>체크카드</strong>는 은행에서 만드는 카드에요.<br><br>물건을 살 때 현금을 내지 않고, 이 카드를 사용하면<br>은행에 있는 내 돈이 빠져나가요.<br><br>돈이 부족하면 사용할 수 없어요."
+                },
+                {
+                    "type": "image",
+                    "subtitle": "예문을 확인해 봐요",
+                    "image": "images/Testimg.jpg",
+                    "text": "여자아이가 편의점에서 체크카드로 과자를 샀어요",
+                    "sound": true
+                },
+                {
+                    "type": "quiz",
+                    "subtitle": "연습을 해보아요!",
+                    "image": "images/Testimg.jpg",
+                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 남자아이가 무엇으로 계산했어요?",
+                    "answer": "체크카드"
+                },
+                {
+                    "type": "quiz",
+                    "subtitle": "연습을 해보아요!",
+                    "image": "images/Testimg.jpg",
+                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 주스를 무엇으로 샀어요?",
+                    "answer": "체크카드"
+                }
+            ]
+        }
+
+    ]
+  }
+  

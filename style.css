@@ -1,6 +1,6 @@
 :root {
     /* 높이 변수 */
-    --header-height: 80px;
+    --header-height: 60px;
     --footer-height: 40px;
     --vertical-margin: 20px; /* 헤더와 푸터 사이의 상하 여백 */
     --horizontal-margin: 20px; /* 좌우 여백 */
@@ -96,8 +96,37 @@ footer {
     text-overflow: ellipsis;
 }
 
+/* 카테고리 버튼들을 2x2 격자로 배치 */
+.main_category .main_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* 버튼 크기 및 스타일 */
+.category-btn {
+    padding: 40px;
+    font-size: var(--font-size-large);
+    border-radius: 15px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+}
+
+.category-btn:hover {
+    background-color: #388e3c;
+}
+
+
 /* 메인 인트로 영역 */
-.main_intro_page {
+.main_page,
+.intro_page {
     position: absolute;
     top: var(--header-height);
     bottom: var(--footer-height);
@@ -114,7 +143,7 @@ footer {
 }
 
 /* 인트로 페이지용 비디오 */
-.main_intro_page #main_video {
+.intro_page #main_video {
     width: 100%;
     max-width: 600px;
     aspect-ratio: 16/9;
@@ -122,8 +151,20 @@ footer {
     border-radius: 20px;
 }
 
+/* 인트로 페이지용 이미지 */
+.main_page .main_image {
+    width: 100%;
+    max-width: 500px;        /* 너무 커지지 않도록 제한 */
+    height: auto;
+    display: block;
+    margin: 20px auto 0 auto; /* 가운데 정렬 + 위쪽 여백 */
+    border-radius: 15px;      /* 모서리 살짝 둥글게 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 그림자 효과 */
+}
+
 /* 소개 텍스트 박스 */
-.main_intro_page .main_information {
+.main_page .main_information,
+.intro_page .main_information {
     background-color: white;
     padding: 20px;
     border-radius: 20px;
@@ -135,7 +176,7 @@ footer {
 }
 
 /* 단어 버튼 구역 - 좌우 분할 */
-.main_intro_page .main_category {
+.intro_page .main_category {
     background-color: white;
     padding: 20px;
     border-radius: 20px;
@@ -147,26 +188,27 @@ footer {
     gap: 20px;
 }
 
-.main_intro_page .main_word,
-.main_intro_page .extend_word {
+.intro_page .main_word,
+.intro_page .extend_word {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 20px;
     gap: 10px;
     background-color: var(--background-color);
     padding: 10px;
     border-radius: 12px;
 }
 
-.main_intro_page .main_word_title {
+.intro_page .main_word_title {
     font-size: var(--font-size-small);
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 /* 단어 버튼 */
-.main_intro_page button.word {
+.intro_page button.word {
     background-color: white;
     color: #333;
     border: none;
@@ -184,7 +226,7 @@ footer {
     text-overflow: ellipsis;
 }
 
-.main_intro_page button.word:hover {
+.intro_page button.word:hover {
     background-color: green;
 }
 
@@ -246,6 +288,7 @@ footer {
 
 /* 개별 슬라이드 */
 .main_practice_page .slide_image,
+.main_practice_page .slide_quiz,
 .main_practice_page .slide_video {
     border-radius: 20px;
     box-sizing: border-box;
@@ -269,7 +312,7 @@ footer {
     font-weight: bold;
     background-color: white;
     padding: 10px 20px;
-    margin: 30px auto 10px auto; /* 상단 여백: 30px */
+    margin: 30px auto 0px auto; /* 상단 여백: 30px */
     border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 약간의 그림자 */
     max-width: 90%; /* 좌우 폭 줄이기 */
@@ -278,41 +321,68 @@ footer {
 
 /* slide 구성 요소 */
 .main_practice_page .slide_subtitle {
-    font-size: 18px;
+    font-size: var(--font-size-large);
+    font-weight: bold;
+    color: #333;
     background-color: white;
-    color: #444;
-    margin-bottom: 10px;
+    border-radius: 10px;
+
+    margin-top: 0;         /* ✅ 위쪽 간격 제거 */
+    margin-bottom: 20px;   /* ✅ 아래쪽 여백 확보 */
+
     text-align: center;
+    line-height: 1.4;
 }
 
 .main_practice_page .slide_main {
     display: flex;
     background-color: white;
+    border-radius: 20px;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+    flex: 1 1 auto;
+    overflow-y: auto; /* ✅ 내용이 많아질 때 스크롤로 처리 */
+    max-height: 100%; /* ✅ slide 내부 높이 제한 */
+    padding: 10px 0;
+}
+
+.slide_quiz .slide_footer {
+    padding-top: 20px;
+    font-size: var(--font-size-small);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
 }
 
 .main_practice_page .slide_main_image img {
-    width: 100%;
+    width: 90%; /* ✅ 전체 너비보다 작게 */
     border-radius: 15px;
     object-fit: contain;
+    display: block;
+    margin: 0 auto; /* ✅ 중앙 정렬 */
 }
 
 .main_practice_page .slide_video iframe {
-    width: 100%;
+    width: 90%;  /* ✅ 크기 줄이기 */
     max-width: 100%;
-    max-height: 60vh; /* 전체 화면 높이의 60%까지만 */
+    max-height: 60vh;
     border: none;
     border-radius: 15px;
     object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
 
 .main_practice_page .slide_main_text,
 .main_practice_page .slide_video_main_text {
     font-size: 16px;
+    width: 90%; /* ✅ 텍스트 블록도 동일하게 크기 줄임 */
+    margin: 0 auto;
     text-align: center;
 }
+
 
 .main_practice_page .slide_footer {
     margin-top: auto;
@@ -320,4 +390,34 @@ footer {
     padding-top: 15px;
     font-size: 14px;
     color: gray;
+}
+
+
+
+/* 텍스트 입력 */
+.quiz-input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* 제출 버튼 */
+.quiz-submit {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.quiz-explanation {
+    margin-top: 20px;
+    font-size: var(--font-size-small);
+    color: #2e7d32;
+    font-weight: bold;
 }
