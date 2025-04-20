@@ -6,38 +6,40 @@
     <meta http-equiv="X-UA-Compatibla" content="ie=edge" />
     <title>한국어 멀티미디어 학습실</title>
     <link rel="stylesheet" href="style.css">
-    <script src="functions.js" defer></script>
+    <script src="functions.js"></script>
 </head>
 <body>
     <header>
-        <h1>은행에서 사용하는<br>필수 어휘 배우기</h1>
+        <button id="home"><img src="images/home.svg"></button>
+        <div id="title">
+            <h1>은행에서 사용하는<br>필수 어휘 배우기</h1>
+        </div>
+        <button id="back"><img src="images/arrow-small-left.svg"></button>
     </header>
-    <main class="main">
-        <iframe width="310" height="600" src="https://www.youtube.com/embed/kycsWDAfY2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <main class="main_intro_page">
+        <iframe id="main_video" width="310" height="600" src="https://www.youtube.com/embed/kycsWDAfY2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <section class="main_information">
+            <h3>
+                한국에서 은행 갔었나요?<br>
+                은행에서 사용하는 단어를 알려줄게요!
+            </h3>
+        </section>
+        <section class="main_category">
+            <div class="main_word">
+                <div class="main_word_title">Main</div>
+                <button class="word">체크카드</button>
+                <button class="word">비밀번호</button>
+                <button class="word">잠시</button>
+            </div>
+            <div class="extend_word">
+                <div class="main_word_title">확장 어휘</div>
+                <button class="word">환전</button>
+                <button class="word">계좌번호</button>
+            </div>
+        </section>
     </main>
-
-    <section class="information">
-        <h3>
-            한국에서 은행 갔었나요?<br>
-            은행에서 사용하는 어휘를 알려줄게요!
-        </h3>
-    </section>
-    <section class="category">
-        <div class="main_word">
-            <strong>Main:</strong>
-            <button id="word1">체크카드</button>
-            <button id="word2">비밀번호</button>
-            <button id="word3">잠시</button>
-        </div>
-        <div class="extend_word">
-            <strong>추가 단어:</strong>
-            <button>환전</button>
-            <button>계좌번호</button>
-        </div>
-    </section>
-
     <footer>
-
+        <div id="rights">© 기획: 박지영, 제작: 김대한.</div>
     </footer>
 </body>
 </html>
