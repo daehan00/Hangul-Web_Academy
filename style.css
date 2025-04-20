@@ -96,13 +96,19 @@ footer {
     text-overflow: ellipsis;
 }
 
+.main_category {
+    width: 100%;
+    max-width: 1000px;   /* 또는 90vw, 100% 등 */
+    margin: 0 auto;
+}
+
 /* 카테고리 버튼들을 2x2 격자로 배치 */
 .main_category .main_grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding: 20px;
-    max-width: 500px;
+    max-width: 90%;
     margin: 0 auto;
 }
 

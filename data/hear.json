@@ -1,24 +1,27 @@
 {
-    "category": "hear",
-    "introTitle": "은행에서 자주 듣는<br>표현을 익혀요!",
-    "introText": "은행 직원의 말을 듣고 이해하는 연습을 해요.",
-    "words": {
-      "main": ["신분증", "계좌번호", "비밀번호"],
-      "extend": ["통장", "거래내역"]
-    },
-    "title": "신분증",
-    "slides": [
-      {
-        "type": "video",
-        "videoUrl": "https://www.youtube.com/embed/EXAMPLE_ID",
-        "text": "‘신분증 좀 보여주세요’라는 말은 본인을 확인하기 위해 쓰는 말이에요."
-      },
-      {
-        "type": "quiz",
-        "subtitle": "은행에서 자주 듣는 말이에요.",
-        "text": "Q: ‘신분증 좀 ___.’",
-        "answer": "보여주세요"
-      }
-    ]
-  }
-  
+  "category": "hear",
+  "introTitle": "은행에서 자주 듣는<br>표현을 익혀요!",
+  "introText": "은행 직원의 말을 듣고 이해하는 연습을 해요.",
+  "words": {
+    "main": ["신분증", "계좌번호", "비밀번호"],
+    "extend": ["통장", "거래내역"]
+  },
+  "entries": [
+    {
+      "title": "신분증",
+      "slides": [
+        {
+          "type": "video",
+          "videoUrl": "https://www.youtube.com/embed/EXAMPLE_ID",
+          "text": "‘신분증 좀 보여주세요’라는 말은 본인을 확인하기 위해 쓰는 말이에요."
+        },
+        {
+          "type": "quiz",
+          "subtitle": "은행에서 자주 듣는 말이에요.",
+          "text": "Q: ‘신분증 좀 ___.’",
+          "answer": "보여주세요"
+        }
+      ]
+    }
+  ]
+}

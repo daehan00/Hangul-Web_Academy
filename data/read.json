@@ -6,19 +6,22 @@
     "main": ["입금", "출금", "이체"],
     "extend": ["잔액", "영수증"]
   },
-  "title": "입금",
-  "slides": [
+  "entries": [
     {
-      "type": "image",
-      "subtitle": "입금하는 장면이에요.",
-      "image": "images/deposit.png",
-      "text": "은행 창구에서 돈을 넣는 것을 입금이라고 해요."
-    },
-    {
-      "type": "video",
-      "videoUrl": "https://www.youtube.com/embed/EXAMPLE_ID",
-      "text": "입금은 돈을 계좌에 넣는 것이에요. 직원에게 통장을 주고 돈을 건넵니다."
+      "title": "입금",
+      "slides": [
+        {
+          "type": "image",
+          "subtitle": "입금하는 장면이에요.",
+          "image": "images/deposit.png",
+          "text": "은행 창구에서 돈을 넣는 것을 입금이라고 해요."
+        },
+        {
+          "type": "video",
+          "videoUrl": "https://www.youtube.com/embed/EXAMPLE_ID",
+          "text": "입금은 돈을 계좌에 넣는 것이에요. 직원에게 통장을 주고 돈을 건넵니다."
+        }
+      ]
     }
   ]
 }
-  

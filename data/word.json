@@ -80,6 +80,57 @@
                     "answer": "체크카드"
                 }
             ]
+        },
+        {
+            "title": "잠시", 
+            "slides": [
+                {
+                    "type": "image",
+                    "subtitle": "아주 짧은 시간",
+                    "image": "images/Testimg.jpg",
+                    "text": "친구가 '잠시 나갔다 올게' 라고 했어요.<br>친구는 빨리 돌아올까요?<br>늦게 들어올까요?"
+                },
+                {
+                    "type": "video",
+                    "videoUrl": "https://www.youtube.com/embed/OZytLLasceA?si=bFDr8KR3LxrnEzOJ",
+                    "text": "<strong>잠시</strong>는 아주 짧은 시간을 말해요.<br><br>은행에서 '잠시 기다려주세요'라고 하면<br>조금만 기다려 달라는 뜻이에요.<br><br>돈이 부족하면 사용할 수 없어요."
+                },
+                {
+                    "type": "image",
+                    "subtitle": "예문을 확인해 봐요",
+                    "image": "images/Testimg.jpg",
+                    "text": "잠시 기다려 주세요",
+                    "sound": true
+                },
+                {
+                    "type": "image",
+                    "subtitle": "예문을 확인해 봐요",
+                    "image": "images/Testimg.jpg",
+                    "text": "선생님이 잠시 후에 와요",
+                    "sound": true
+                },
+                {
+                    "type": "image",
+                    "subtitle": "예문을 확인해 봐요",
+                    "image": "images/Testimg.jpg",
+                    "text": "친구가 잠시 나갔어요",
+                    "sound": true
+                },
+                {
+                    "type": "quiz",
+                    "subtitle": "연습을 해보아요!",
+                    "image": "images/Testimg.jpg",
+                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 남자아이가 무엇으로 계산했어요?",
+                    "answer": "체크카드"
+                },
+                {
+                    "type": "quiz",
+                    "subtitle": "연습을 해보아요!",
+                    "image": "images/Testimg.jpg",
+                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 주스를 무엇으로 샀어요?",
+                    "answer": "체크카드"
+                }
+            ]
         }
 
     ]
