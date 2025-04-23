@@ -52,11 +52,16 @@ header button {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    
+    /* ✅ 추가된 부분 */
+    background-color: transparent; /* 배경색 제거 */
+    /* color: white; 버튼 안의 텍스트나 아이콘 색상을 흰색으로 */
 }
 
 header img {
     width: 24px;
     height: 24px;
+    /* filter: brightness(0) invert(1); 어두운 색을 흰색처럼 보여줌 */
 }
 
 #title {
@@ -299,7 +304,7 @@ footer {
     border-radius: 20px;
     box-sizing: border-box;
     padding: 20px;
-    margin: 10px auto;
+    margin: 0px auto 10px auto;
     max-width: 600px;
     width: 100%;
     flex-shrink: 0;
@@ -383,10 +388,13 @@ footer {
 
 .main_practice_page .slide_main_text,
 .main_practice_page .slide_video_main_text {
-    font-size: 16px;
-    width: 90%; /* ✅ 텍스트 블록도 동일하게 크기 줄임 */
-    margin: 0 auto;
+    font-size: var(--font-size-small);
     text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 
@@ -396,8 +404,17 @@ footer {
     padding-top: 15px;
     font-size: 14px;
     color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
+/* 인풋과 버튼이 같이 있는 경우 한 줄 정렬 */
+.slide_footer:has(.quiz-input) {
+    flex-direction: row;
+    justify-content: center;
+}
 
 
 /* 텍스트 입력 */

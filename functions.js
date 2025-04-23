@@ -56,7 +56,7 @@ window.initializeSlideEvents = function () {
             const computedStyle = window.getComputedStyle(slideElements[0]);
             const marginTop = parseInt(computedStyle.marginTop) || 0;
             const marginBottom = parseInt(computedStyle.marginBottom) || 0;
-            const marginGap = marginTop * 2 + marginBottom - 10;
+            const marginGap = marginTop * 2 + marginBottom;
             currentTranslate = -currentIndex * (slideHeight + marginGap);
             prevTranslate = currentTranslate;
 

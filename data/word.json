@@ -2,137 +2,123 @@
     "category": "word",
     "introTitle": "은행에서 사용하는<br>필수 어휘 배우기",
     "introText": "은행에서 사용하는 단어를 공부해요!",
+    "introVideo": "",
     "words": {
-      "main": ["체크카드", "비밀번호", "잠시"],
-      "extend": ["환전", "계좌번호"]
+        "main": ["체크카드", "비밀번호", "잠시"],
+        "extend": ["환전", "계좌번호"]
     },
     "entries": [
         {
-            "title": "체크카드", 
+        "title": "비밀번호",
             "slides": [
                 {
                     "type": "image",
-                    "subtitle": "물건을 살 때 돈 대신 사용하는 작은 카드를 본 적이 있어요?",
-                    "image": "images/Testimg.jpg",
-                    "text": "은행에서 만드는 작은 카드로,<br>물건을 살 때 바로 돈이 은행에서 나와요!"
+                    "subtitle": "은행에서 카드를 만들었어요. 카드를 사용할 때 숫자를 눌러야 해요. 이 숫자를 뭐라고 해요?",
+                    "image": "images/password1.png",
+                    "text": "다른 사람에게 말하면 안되는 숫자에요!"
                 },
                 {
                     "type": "video",
-                    "videoUrl": "https://www.youtube.com/embed/OZytLLasceA?si=bFDr8KR3LxrnEzOJ",
-                    "text": "<strong>체크카드</strong>는 은행에서 만드는 카드에요.<br><br>물건을 살 때 현금을 내지 않고, 이 카드를 사용하면<br>은행에 있는 내 돈이 빠져나가요.<br><br>돈이 부족하면 사용할 수 없어요."
+                    "videoUrl": "https://www.youtube.com/embed/ygblARl-Z4I?si=cLKfDGHJUndxblxX",
+                    "text": "비밀번호는 핸드폰, 카드 등 사용할 때 입력하는 숫자에요!<br>보통 숫자 4개이고, 나만 알아야 해요.<br>비밀번호는 잘 기억해야 해요!"
                 },
                 {
                     "type": "image",
                     "subtitle": "예문을 확인해 봐요",
-                    "image": "images/Testimg.jpg",
-                    "text": "여자아이가 편의점에서 체크카드로 과자를 샀어요",
+                    "image": "images/password2.png",
+                    "text": "직원이 비밀번호를 누르라고 했어요.",
                     "sound": true
                 },
                 {
                     "type": "quiz",
                     "subtitle": "연습을 해보아요!",
-                    "image": "images/Testimg.jpg",
-                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 남자아이가 무엇으로 계산했어요?",
+                    "image": "images/password3.png",
+                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 은행에서 카드를 만들 때 숫자를 눌러야 해요. 이 숫자는 무엇일까요?",
+                    "answer": "비밀번호"
+                },
+                {
+                    "type": "quiz",
+                    "subtitle": "연습을 해보아요!",
+                    "image": "images/password4.png",
+                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 은행에서 돈을 찾을 때 꼭 입력해야 하는 비밀 숫자는 무엇일까요?",
+                    "answer": "비밀번호"
+                }
+            ]
+        },
+        {
+            "title": "체크카드",
+            "slides": [
+                {
+                    "type": "image",
+                    "subtitle": "물건을 살 때 돈 대신 사용하는 작은 카드를 본 적이 있어요?",
+                    "image": "images/checkcard1.png",
+                    "text": "은행에서 만드는 작은 카드로, 미리 돈을 카드에 넣고 물건을 살 때 쓸 수 있어요!"
+                },
+                {
+                    "type": "video",
+                    "videoUrl": "https://www.youtube.com/embed/R9E21dZBaxo?si=BySkVswot-tZ-BVU",
+                    "text": "체크카드는 은행에서 만드는 카드에요.<br>물건을 살 때 종이돈을 내지 않고, 이 카드를 사용하면 은행에 있는 내 돈이 빠져 나가요.<br>돈이 부족하면 사용할 수 없어요 ㅠ"
+                },
+                {
+                    "type": "image",
+                    "subtitle": "예문을 확인해 봐요",
+                    "image": "images/checkcard2.png",
+                    "text": "저는 은행에서 체크카드를 만들었어요.",
+                    "sound": true
+                },
+                {
+                    "type": "quiz",
+                    "subtitle": "연습을 해보아요!",
+                    "image": "images/checkcard3.png",
+                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 은행에 가서 어떤 카드를 만들었어요?<br>A: ______를 만들었어요",
                     "answer": "체크카드"
                 },
                 {
                     "type": "quiz",
                     "subtitle": "연습을 해보아요!",
-                    "image": "images/Testimg.jpg",
-                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 주스를 무엇으로 샀어요?",
+                    "image": "images/checkcard4.png",
+                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 은행 직원: 조금만 기다려주시면 _____만들어 드릴게요.<br>A: ____",
                     "answer": "체크카드"
                 }
             ]
         },
         {
-            "title": "비밀번호", 
+            "title": "잠시",
             "slides": [
                 {
                     "type": "image",
-                    "subtitle": "물건을 살 때 돈 대신 사용하는 작은 카드를 본 적이 있어요?",
-                    "image": "images/Testimg.jpg",
-                    "text": "은행에서 만드는 작은 카드로,<br>물건을 살 때 바로 돈이 은행에서 나와요!"
+                    "subtitle": "은행직원이 \"잠시 기다려주세요.\"라고 말했어요. 조금만 기다리면 될까요? 많이 기다려야 될까요?",
+                    "image": "images/wait1.png",
+                    "text": "정답은 조금만 기다리면 됩니다!"
                 },
                 {
                     "type": "video",
-                    "videoUrl": "https://www.youtube.com/embed/OZytLLasceA?si=bFDr8KR3LxrnEzOJ",
-                    "text": "<strong>체크카드</strong>는 은행에서 만드는 카드에요.<br><br>물건을 살 때 현금을 내지 않고, 이 카드를 사용하면<br>은행에 있는 내 돈이 빠져나가요.<br><br>돈이 부족하면 사용할 수 없어요."
+                    "videoUrl": "https://www.youtube.com/embed/0oO8DtB4bkw?",
+                    "text": "잠시는 아주 짧은 시간을 말해요.<br>은행에서 직원이 \"잠시 기다려주세요.\" 라고 말하면<br>조금만 기다려 달라는 뜻이에요."
                 },
                 {
                     "type": "image",
                     "subtitle": "예문을 확인해 봐요",
-                    "image": "images/Testimg.jpg",
-                    "text": "여자아이가 편의점에서 체크카드로 과자를 샀어요",
+                    "image": "images/wait2.png",
+                    "text": "저는 잠시 대기 공간에서 기다렸어요.",
                     "sound": true
                 },
                 {
                     "type": "quiz",
                     "subtitle": "연습을 해보아요!",
-                    "image": "images/Testimg.jpg",
-                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 남자아이가 무엇으로 계산했어요?",
-                    "answer": "체크카드"
+                    "image": "images/wait3.png",
+                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 은행 직원이 바빠서 ____나갔어요.<br>A: ____",
+                    "answer": "잠시"
                 },
                 {
                     "type": "quiz",
                     "subtitle": "연습을 해보아요!",
-                    "image": "images/Testimg.jpg",
-                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 주스를 무엇으로 샀어요?",
-                    "answer": "체크카드"
-                }
-            ]
-        },
-        {
-            "title": "잠시", 
-            "slides": [
-                {
-                    "type": "image",
-                    "subtitle": "아주 짧은 시간",
-                    "image": "images/Testimg.jpg",
-                    "text": "친구가 '잠시 나갔다 올게' 라고 했어요.<br>친구는 빨리 돌아올까요?<br>늦게 들어올까요?"
-                },
-                {
-                    "type": "video",
-                    "videoUrl": "https://www.youtube.com/embed/OZytLLasceA?si=bFDr8KR3LxrnEzOJ",
-                    "text": "<strong>잠시</strong>는 아주 짧은 시간을 말해요.<br><br>은행에서 '잠시 기다려주세요'라고 하면<br>조금만 기다려 달라는 뜻이에요.<br><br>돈이 부족하면 사용할 수 없어요."
-                },
-                {
-                    "type": "image",
-                    "subtitle": "예문을 확인해 봐요",
-                    "image": "images/Testimg.jpg",
-                    "text": "잠시 기다려 주세요",
-                    "sound": true
-                },
-                {
-                    "type": "image",
-                    "subtitle": "예문을 확인해 봐요",
-                    "image": "images/Testimg.jpg",
-                    "text": "선생님이 잠시 후에 와요",
-                    "sound": true
-                },
-                {
-                    "type": "image",
-                    "subtitle": "예문을 확인해 봐요",
-                    "image": "images/Testimg.jpg",
-                    "text": "친구가 잠시 나갔어요",
-                    "sound": true
-                },
-                {
-                    "type": "quiz",
-                    "subtitle": "연습을 해보아요!",
-                    "image": "images/Testimg.jpg",
-                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 남자아이가 무엇으로 계산했어요?",
-                    "answer": "체크카드"
-                },
-                {
-                    "type": "quiz",
-                    "subtitle": "연습을 해보아요!",
-                    "image": "images/Testimg.jpg",
-                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 주스를 무엇으로 샀어요?",
-                    "answer": "체크카드"
+                    "image": "images/wait4.png",
+                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 은행 직원이 ____다른 손님을 도와주고 있어요.<br>A: ____",
+                    "answer": "잠시"
                 }
             ]
         }
-
     ]
-  }
+}
   

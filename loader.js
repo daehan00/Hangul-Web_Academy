@@ -40,7 +40,7 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
             const main = document.createElement("div");
             main.className = "slide_main";
 
-            if (slide.type === "image" && slide.image) {
+            if (slide.type === "image" || slide.image) {
                 const imageBox = document.createElement("div");
                 imageBox.className = "slide_main_image";
                 const img = document.createElement("img");
@@ -75,26 +75,28 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
                 main.appendChild(soundBtn);
             }
 
+            slideEl.appendChild(main);
+
+            const footer = document.createElement("div");
+            footer.className = "slide_footer";
+
             if (slide.type === "quiz") {
                 const input = document.createElement("input");
                 input.className = "quiz-input";
                 input.setAttribute("data-answer", slide.answer);
                 input.placeholder = "답을 입력하세요!";
-                main.appendChild(input);
 
                 const button = document.createElement("button");
                 button.className = "quiz-submit";
                 button.textContent = "제출";
-                main.appendChild(button);
+
+                footer.appendChild(input);
+                footer.appendChild(button);
+            } else {
+                footer.textContent = "아래로 넘기세요";
             }
 
-            slideEl.appendChild(main);
-
-            const footer = document.createElement("div");
-            footer.className = "slide_footer";
-            footer.textContent = "아래로 넘기세요";
             slideEl.appendChild(footer);
-
             slidesContainer.appendChild(slideEl);
         });
     } catch (err) {
@@ -124,6 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const infoEl = document.querySelector('.main_information h3');
             if (infoEl && data.introText) {
                 infoEl.innerHTML = data.introText;
+            }
+
+            // 소개 영상
+            const videoEl = document.querySelector('#main_video');
+            if (videoEl && data.introVideo) {
+                videoEl.src = data.introVideo;
             }
 
             // 어휘 버튼 생성
