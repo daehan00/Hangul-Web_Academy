@@ -24,10 +24,39 @@ window.initializeSlideEvents = function () {
             animationID = requestAnimationFrame(animation);
         }
 
+        // function move(event) {
+        //     if (!isDragging) return;
+        //     const currentY = getY(event);
+        //     currentTranslate = prevTranslate + currentY - startY;
+        // }
+
         function move(event) {
             if (!isDragging) return;
+        
             const currentY = getY(event);
             currentTranslate = prevTranslate + currentY - startY;
+        
+            // ✅ 스크롤 가능한지 확인
+            const activeSlideMain = document.querySelector('.slide.active .slide_main');
+            if (activeSlideMain && activeSlideMain.scrollHeight > activeSlideMain.clientHeight) {
+                const scrollTop = activeSlideMain.scrollTop;
+                const delta = startY - currentY;
+        
+                // ✅ 위로 스크롤 시: 이미 최상단이면 슬라이드 이동 허용
+                if (delta < 0 && scrollTop <= 0) {
+                    // allow slide move
+                }
+                // ✅ 아래로 스크롤 시: 이미 최하단이면 슬라이드 이동 허용
+                else if (delta > 0 && scrollTop + activeSlideMain.clientHeight >= activeSlideMain.scrollHeight) {
+                    // allow slide move
+                }
+                else {
+                    // ✅ 내부 스크롤 중이면 슬라이드 이동 차단
+                    isDragging = false;
+                    cancelAnimationFrame(animationID);
+                    return;
+                }
+            }
         }
 
         function end() {
@@ -57,12 +86,18 @@ window.initializeSlideEvents = function () {
             const marginTop = parseInt(computedStyle.marginTop) || 0;
             const marginBottom = parseInt(computedStyle.marginBottom) || 0;
             const marginGap = marginTop * 2 + marginBottom;
+        
             currentTranslate = -currentIndex * (slideHeight + marginGap);
             prevTranslate = currentTranslate;
-
+        
+            // ✅ 현재 활성 슬라이드에 active 클래스 부여
+            slideElements.forEach((slide, i) => {
+                slide.classList.toggle("active", i === currentIndex);
+            });
+        
             slides.style.transition = 'transform 0.4s ease-in-out';
             setSliderPosition();
-
+        
             setTimeout(() => {
                 slides.style.transition = '';
             }, 400);
