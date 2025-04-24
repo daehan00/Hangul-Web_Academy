@@ -3,29 +3,98 @@
   "introTitle": "은행에서 쓰이는<br>문법 표현 배우기",
   "introText": "‘-는 동안’, ‘부터’ 같은 문법을 배워봐요!",
   "words": {
-    "main": ["-는 동안", "부터", "-기 전에"],
-    "extend": ["-고 나서", "-아/어서"]
+    "main": ["-는 동안", "부터"],
+    "extend": []
   },
   "entries": [
+    {
+      "title": "부터",
+      "slides": [
+        {
+          "type": "image",
+          "subtitle": "은행 가서 뭐부터 뽑아야 해요?",
+          "image": "images/Testimg.jpg",
+          "text": "은행 가서 번호표부터 뽑아야 해요."
+        },
+        {
+          "type": "video",
+          "videoUrl": "유튜브링크",
+          "text": "'부터'는 시작을 말할 때 쓰는 말이에요.<br>시간이나 순서에서 제일 먼저 하는 것을 말할 때 사용해요!"
+        },
+        {
+          "type": "image",
+          "subtitle": "기본 구조",
+          "text": "명사 + '부터' + 동사<br><br>🕒 9시부터 수업을 해요.<br>🏠 거실부터 청소했어요.<br>📌 숙제부터 했어요.<br><br>'부터'는 항상 명사 뒤에 사용해요."
+        },
+        {
+          "type": "quiz",
+          "subtitle": "연습을 해보아요!",
+          "image": "images/Testimg.jpg",
+          "text": "빈칸에 알맞게 대답해 주세요!<br><br>Q: 은행에 가면 _______뽑아요",
+          "answer": "번호표부터"
+        },
+        {
+          "type": "quiz",
+          "subtitle": "연습을 해보아요!",
+          "image": "images/Testimg.jpg",
+          "text": "Q: 일어나서 제일 먼저 하는 것은 무엇이에요?<br>A: ________마셔요.",
+          "answer": "물부터"
+        },
+        {
+          "type": "quiz",
+          "subtitle": "연습을 해보아요!",
+          "image": "images/Testimg.jpg",
+          "text": "Q: 엄마가 밥 먹고 뭐부터 해요?",
+          "answer": "설거지부터"
+        }
+      ]
+    },
     {
       "title": "-는 동안",
       "slides": [
         {
           "type": "image",
-          "subtitle": "은행에서 기다리는 동안...",
-          "image": "images/during_wait.png",
-          "text": "‘기다리는 동안 책을 읽었어요.’처럼 ‘-는 동안’은 두 행동이 동시에 일어날 때 사용해요."
-        }
-      ]
-    },
-    {
-      "title": "-기 전에",
-      "slides": [
+          "subtitle": "은행에서 기다리는 동안 뭐했어요?",
+          "image": "images/Testimg.jpg",
+          "text": "은행에서 기다리는 동안 신문을 읽었어요."
+        },
+        {
+          "type": "video",
+          "videoUrl": "유튜브링크",
+          "text": "'-는 동안'은 2가지 일이 같은 시간에 일어날 때 사용해요.<br>앞 문장은 내가 하는 일, 뒤 문장은 그 시간에 한 다른 일이에요.<br>'~하면서'와 비슷하지만 더 긴 시간을 말해요."
+        },
+        {
+          "type": "image",
+          "subtitle": "기본 구조 설명",
+          "image": "images/Testimg.jpg",
+          "text": "동사 + '-는 동안' + 다른 행동<br><br>📚 일하는 동안 / 공부하는 동안 / 기다리는 동안"
+        },
+        {
+          "type": "image",
+          "subtitle": "활용형/활용 방법/불규칙 활용",
+          "image": "images/Testimg.jpg",
+          "text": "📌 활용형: 현재 시제 동사 + '-는 동안'<br>예: 보다 → 보는 동안<br>📌 사용법: 두 개의 동작이 동시에 일어날 때 사용해요. 명사에는 사용하지 않아요.<br>예: 기다리는 동안 노래를 들었어요.<br>📌 주의: '살아요' → '사는 동안', '놀아요' → '노는 동안'"
+        },
         {
           "type": "quiz",
-          "subtitle": "다음 문장에 알맞은 문법은?",
-          "text": "Q: 나는 돈을 <u>___</u> 전화를 받았어요.",
-          "answer": "-기 전에"
+          "subtitle": "연습을 해보아요!",
+          "image": "images/Testimg.jpg",
+          "text": "은행에서 ________핸드폰을 봤어요.<br><small>-은행에서 기다리고 있어요. 기다리면서 핸드폰을 봤어요.</small>",
+          "answer": "기다리는 동안"
+        },
+        {
+          "type": "quiz",
+          "subtitle": "연습을 해보아요!",
+          "image": "images/Testimg.jpg",
+          "text": "'-는 동안'을 사용하여 질문에 알맞게 대답해 주세요.<br><br>Q: 밥을 먹는 동안 뭐했어요?<br>A: ___________ (문장을 완성해주세요.)",
+          "answer": "밥을 먹는 동안 드라마를 봤어요."
+        },
+        {
+          "type": "quiz",
+          "subtitle": "연습을 해보아요!",
+          "image": "images/Testimg.jpg",
+          "text": "'-는 동안'을 사용하여 질문에 알맞게 대답해 주세요!<br><br>Q: 영화를 볼 때 무엇을 먹었어요?<br>A: _____________ (문장을 완성해주세요.)",
+          "answer": "영화를 보는 동안 팝콘을 먹었어요."
         }
       ]
     }

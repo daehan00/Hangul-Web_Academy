@@ -1,10 +1,10 @@
 {
     "category": "word",
     "introTitle": "은행에서 사용하는<br>필수 어휘 배우기",
-    "introText": "은행에서 사용하는 단어를 공부해요!",
+    "introText": "은행에서 사용하는 단어를<br>공부해요!",
     "introVideo": "",
     "words": {
-        "main": ["체크카드", "비밀번호", "잠시"],
+        "main": ["비밀번호","체크카드", "잠시"],
         "extend": ["환전", "계좌번호"]
     },
     "entries": [
@@ -27,20 +27,20 @@
                     "subtitle": "예문을 확인해 봐요",
                     "image": "images/password2.png",
                     "text": "직원이 비밀번호를 누르라고 했어요.",
-                    "sound": true
+                    "sound": "sounds/testspeech.mp3"
                 },
                 {
                     "type": "quiz",
                     "subtitle": "연습을 해보아요!",
                     "image": "images/password3.png",
-                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 은행에서 카드를 만들 때 숫자를 눌러야 해요. 이 숫자는 무엇일까요?",
+                    "text": "질문에 알맞게 대답해 주세요!<br><br>Q: 은행에서 카드를 만들 때 숫자를 눌러야 해요. 이 숫자는 무엇일까요?",
                     "answer": "비밀번호"
                 },
                 {
                     "type": "quiz",
                     "subtitle": "연습을 해보아요!",
                     "image": "images/password4.png",
-                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 은행에서 돈을 찾을 때 꼭 입력해야 하는 비밀 숫자는 무엇일까요?",
+                    "text": "질문에 알맞게 대답해 주세요!<br><br>Q: 은행에서 돈을 찾을 때 꼭 입력해야 하는 비밀 숫자는 무엇일까요?",
                     "answer": "비밀번호"
                 }
             ]
@@ -57,7 +57,7 @@
                 {
                     "type": "video",
                     "videoUrl": "https://www.youtube.com/embed/R9E21dZBaxo?si=BySkVswot-tZ-BVU",
-                    "text": "체크카드는 은행에서 만드는 카드에요.<br>물건을 살 때 종이돈을 내지 않고, 이 카드를 사용하면 은행에 있는 내 돈이 빠져 나가요.<br>돈이 부족하면 사용할 수 없어요 ㅠ"
+                    "text": "체크카드는 은행에서 만드는 카드에요.<br>물건을 살 때 종이돈을 내지 않고, 이 카드를 사용하면 은행에 있는 내 돈이 빠져 나가요.<br>돈이 부족하면 사용할 수 없어요 😭"
                 },
                 {
                     "type": "image",
@@ -70,14 +70,14 @@
                     "type": "quiz",
                     "subtitle": "연습을 해보아요!",
                     "image": "images/checkcard3.png",
-                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 은행에 가서 어떤 카드를 만들었어요?<br>A: ______를 만들었어요",
+                    "text": "질문에 알맞게 대답해 주세요!<br><br>Q: 은행에 가서 어떤 카드를 만들었어요?<br>A: ______를 만들었어요",
                     "answer": "체크카드"
                 },
                 {
                     "type": "quiz",
                     "subtitle": "연습을 해보아요!",
                     "image": "images/checkcard4.png",
-                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 은행 직원: 조금만 기다려주시면 _____만들어 드릴게요.<br>A: ____",
+                    "text": "질문에 알맞게 대답해 주세요!<br><br>Q: 은행 직원: 조금만 기다려주시면 _____만들어 드릴게요.<br>A: ____",
                     "answer": "체크카드"
                 }
             ]
@@ -107,15 +107,75 @@
                     "type": "quiz",
                     "subtitle": "연습을 해보아요!",
                     "image": "images/wait3.png",
-                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 은행 직원이 바빠서 ____나갔어요.<br>A: ____",
+                    "text": "질문에 알맞게 대답해 주세요!<br><br>Q: 은행 직원이 바빠서 ____나갔어요.<br>A: ____",
                     "answer": "잠시"
                 },
                 {
                     "type": "quiz",
                     "subtitle": "연습을 해보아요!",
                     "image": "images/wait4.png",
-                    "text": "질문에 알맞게 대답해주세요!<br><br>Q: 은행 직원이 ____다른 손님을 도와주고 있어요.<br>A: ____",
+                    "text": "질문에 알맞게 대답해 주세요!<br><br>Q: 은행 직원이 ____다른 손님을 도와주고 있어요.<br>A: ____",
                     "answer": "잠시"
+                }
+            ]
+        },
+        {
+            "title": "계좌번호",
+            "slides": [
+                {
+                    "type": "image",
+                    "subtitle": "친구가 나에게 돈을 보내주고 싶어 해요. 친구에게 무엇을 알려줘야 할까요?",
+                    "image": "images/Testimg.jpg",
+                    "text": "카드를 만들 때 통장에 적혀 있는 숫자를 알려줘야 해요."
+                },
+                {
+                    "type": "video",
+                    "videoUrl": "유튜브링크",
+                    "text": "영상에서 통장이 나왔죠? 통장 첫 장 위에 적힌 숫자가 계좌번호예요.<br>내 통장의 번호에요.<br>돈을 주거나 받을 때 꼭 필요해요!"
+                },
+                {
+                    "type": "image",
+                    "subtitle": "예문을 확인해 봐요",
+                    "image": "images/Testimg.jpg",
+                    "text": "은행에서 만들어준 내 계좌 번호는 260-203456-07051",
+                    "sound": true
+                },
+                {
+                    "type": "quiz",
+                    "subtitle": "연습을 해보아요!",
+                    "image": "images/Testimg.jpg",
+                    "text": "질문에 알맞게 대답해 주세요!<br><br>Q: 내 통장에 돈을 넣으려면 카드말고 뭐가 필요해요?",
+                    "answer": "계좌번호"
+                }
+            ]
+          },
+          {
+            "title": "환전",
+            "slides": [
+                {
+                    "type": "image",
+                    "subtitle": "다른 나라의 돈을 한국 돈으로 바꿔본 적 있어요?",
+                    "image": "images/Testimg.jpg",
+                    "text": ""
+                },
+                {
+                    "type": "video",
+                    "videoUrl": "유튜브링크",
+                    "text": "환전은 다른 나라의 돈을 한국 돈으로 바꾸는 것이에요.<br>예를 들면 미국 돈 달러를 한국 돈 원으로 바꾸는 걸 환전이라고 해요.<br>한국에서는 은행, 공항, 환전소에서 환전을 할 수 있어요."
+                },
+                {
+                    "type": "image",
+                    "subtitle": "예문을 확인해 봐요",
+                    "image": "images/Testimg.jpg",
+                    "text": "저는 은행에서 중국 돈을 한국 돈으로 환전했어요.<br>은행에서 환전을 하고 통장에 넣었어요.",
+                    "sound": true
+                },
+                {
+                    "type": "quiz",
+                    "subtitle": "연습을 해보아요!",
+                    "image": "images/Testimg.jpg",
+                    "text": "질문에 알맞게 대답해 주세요!<br><br>Q: 한국 돈을 일본 돈으로 바꾸는 걸 뭐라고 해요?",
+                    "answer": "환전"
                 }
             ]
         }

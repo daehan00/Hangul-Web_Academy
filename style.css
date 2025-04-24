@@ -12,7 +12,9 @@
     --font-size-small: 16px;
     --font-size-very-small: 14px;
 
-    --background-color: #b2f2bb;
+    --background-color: #e3ebcb;
+    --button-color: #a7c3a0;
+    --button-color-hover: #91b489;
 }
 
 body, html {
@@ -123,7 +125,7 @@ footer {
     font-size: var(--font-size-large);
     border-radius: 15px;
     border: none;
-    background-color: #4CAF50;
+    background-color: var(--button-color);
     color: white;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -131,7 +133,7 @@ footer {
 }
 
 .category-btn:hover {
-    background-color: #388e3c;
+    background-color: var(--button-color-hover);
 }
 
 
@@ -150,7 +152,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 /* 인트로 페이지용 비디오 */
@@ -177,18 +179,17 @@ footer {
 .main_page .main_information,
 .intro_page .main_information {
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
     text-align: center;
     font-size: var(--font-size-medium);
-    width: 100%;
-    max-width: 100%;
+    width: 90%;
+    max-width: 90%;
     box-sizing: border-box;
 }
 
 /* 단어 버튼 구역 - 좌우 분할 */
 .intro_page .main_category {
-    background-color: white;
     padding: 20px;
     border-radius: 20px;
     font-size: var(--font-size-medium);
@@ -207,9 +208,8 @@ footer {
     align-items: center;
     border-radius: 20px;
     gap: 10px;
-    background-color: var(--background-color);
+    background-color: white;
     padding: 10px;
-    border-radius: 12px;
 }
 
 .intro_page .main_word_title {
@@ -220,11 +220,11 @@ footer {
 
 /* 단어 버튼 */
 .intro_page button.word {
-    background-color: white;
+    background-color: #f6ced7;
     color: #333;
     border: none;
-    border-radius: 20%;
-    padding: 10px 20px;
+    border-radius: 20px;
+    padding: 20px 20px;
     font-size: var(--font-size-small);
     cursor: pointer;
     transition: background-color 0.2s;
@@ -238,7 +238,7 @@ footer {
 }
 
 .intro_page button.word:hover {
-    background-color: green;
+    background-color: #eca9b8;
 }
 
 /* sound 버튼 */
@@ -246,18 +246,24 @@ footer {
     background: none;
     border: none;
     padding: 0;
+    border-radius: 100%;
     cursor: pointer;
     width: 48px;
     height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--button-color);
 }
 
 /* 아이콘 이미지 크기 조정 */
 .sound img {
     width: 32px;
     height: 32px;
+}
+
+.sound:hover {
+    background-color: var(--button-color-hover);
 }
 
 
@@ -283,7 +289,7 @@ footer {
     height: 100%;
     overflow: hidden;
     position: relative;
-    padding: 20px var(--horizontal-margin); /* 위아래 + 좌우 마진 */
+    padding: 10px var(--horizontal-margin); /* 위아래 + 좌우 마진 */
     box-sizing: border-box;
 }
 
@@ -337,6 +343,7 @@ footer {
     color: #333;
     background-color: white;
     border-radius: 10px;
+    padding: 5px;
 
     margin-top: 0;         /* ✅ 위쪽 간격 제거 */
     margin-bottom: 20px;   /* ✅ 아래쪽 여백 확보 */

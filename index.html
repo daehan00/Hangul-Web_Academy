@@ -7,15 +7,14 @@
     <title>한국어 멀티미디어 학습실</title>
     <link rel="stylesheet" href="style.css">
     <script src="functions.js"></script>
-    <script src="loader.js"></script>
 </head>
 <body>
     <header>
-        <button id="home"><img src="images/home.svg"></button>
+        <button id="home"><img src="images/icons/home.svg"></button>
         <div id="title">
             <h1>은행 표현 마스터하기</h1>
         </div>
-        <button id="back"><img src="images/arrow-small-left.svg"></button>
+        <button id="back"><img src="images/icons/arrow-small-left.svg"></button>
     </header>
     <main class="main_page">
         <section class="main_information">
@@ -24,8 +23,6 @@
                 함께 공부해봐요!
             </h3>
             <img src="images/bank.jpg" alt="은행 관련 이미지" class="main_image">
-        </section>
-        <section class="">
         </section>
         <section class="main_category">
             <div class="main_grid">
@@ -37,16 +34,23 @@
         </section>
     </main>
     <footer>
-        <div id="rights">© 기획: 박지영, 제작: 김대한.</div>
+        <div id="rights">© 기획, 제작: 박지영, 제작: 김대한.</div>
     </footer>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const buttons = document.querySelectorAll('.category-btn');
             buttons.forEach(button => {
                 button.addEventListener('click', () => {
                     const category = button.dataset.category;
-                    window.location.href = `intro.html?category=${category}`;
+    
+                    // intro 없이 바로 main.html로 가야 하는 카테고리
+                    const directCategories = ['read', 'hear'];
+    
+                    if (directCategories.includes(category)) {
+                        window.location.href = `main.html?category=${category}`;
+                    } else {
+                        window.location.href = `intro.html?category=${category}`;
+                    }
                 });
             });
         });

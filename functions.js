@@ -72,14 +72,6 @@ window.initializeSlideEvents = function () {
             return event.type.includes('mouse') ? event.clientY : event.touches[0].clientY;
         }
 
-        /** 🔊 사운드 버튼 **/
-        const soundButtons = slides.querySelectorAll('button.sound');
-        soundButtons.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                alert("예문을 읽습니다.");
-            });
-        });
-
         /** 📝 퀴즈 제출 **/
         const quizButtons = slides.querySelectorAll('.quiz-submit');
         quizButtons.forEach((btn) => {
@@ -164,6 +156,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (backBtn) {
         backBtn.addEventListener('click', () => {
             window.history.back();
+        });
+    }
+
+    const titleElement = document.querySelector(".main_title");
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get("category") || "word";
+    const word = params.get("word") || "";
+
+    if (titleElement && category) {
+        titleElement.style.cursor = "pointer"; // 마우스 오버 시 커서 변경
+        titleElement.addEventListener("click", () => {
+            // 슬라이드 위치 초기화
+            slidesContainer.style.transition = "transform 0.5s ease-in-out";
+            slidesContainer.style.transform = "translateY(0px)";
+
+            // 내부 슬라이드 로직 변수도 초기화
+            if (typeof currentIndex !== "undefined") currentIndex = 0;
+            if (typeof currentTranslate !== "undefined") currentTranslate = 0;
+            if (typeof prevTranslate !== "undefined") prevTranslate = 0;
         });
     }
 });
