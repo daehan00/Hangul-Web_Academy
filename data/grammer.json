@@ -24,7 +24,25 @@
         {
           "type": "image",
           "subtitle": "기본 구조",
-          "text": "명사 + '부터' + 동사<br><br>🕒 9시부터 수업을 해요.<br>🏠 거실부터 청소했어요.<br>📌 숙제부터 했어요.<br><br>'부터'는 항상 명사 뒤에 사용해요."
+          "text": "명사 + '부터' + 동사",
+          "lines": [
+            {
+              "emoji": "🕒",
+              "text": "9시부터 수업을 해요.",
+              "sound": "sounds/speech6.mp3"
+            },
+            {
+              "emoji": "🏠",
+              "text": "거실부터 청소했어요.",
+              "sound": "sounds/speech7.mp3"
+            },
+            {
+              "emoji": "📌",
+              "text": "숙제부터 했어요.",
+              "sound": "sounds/speech8.mp3"
+            }
+          ],
+          "conclusion": "<br>'부터'는 항상 명사 뒤에 사용해요."
         },
         {
           "type": "quiz",

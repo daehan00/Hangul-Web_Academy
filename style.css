@@ -190,7 +190,7 @@ footer {
 
 /* 단어 버튼 구역 - 좌우 분할 */
 .intro_page .main_category {
-    padding: 20px;
+    padding: 10px 20px;
     border-radius: 20px;
     font-size: var(--font-size-medium);
     width: 100%;
@@ -215,7 +215,8 @@ footer {
 .intro_page .main_word_title {
     font-size: var(--font-size-small);
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 8px;
+    text-align: center;
 }
 
 /* 단어 버튼 */
@@ -342,7 +343,7 @@ footer {
     font-weight: bold;
     color: #333;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 5px;
 
     margin-top: 0;         /* ✅ 위쪽 간격 제거 */
@@ -394,6 +395,7 @@ footer {
 }
 
 .main_practice_page .slide_main_text,
+.main_practice_page .slide_main_text,
 .main_practice_page .slide_video_main_text {
     font-size: var(--font-size-small);
     text-align: center;
@@ -404,6 +406,76 @@ footer {
     box-sizing: border-box;
 }
 
+/* 단일 줄 주석 설명 */
+/* 단일 줄 주석 설명 */
+.main_practice_page .slide_annotation {
+    font-size: 13px;
+    color: #555;
+    margin-top: 5px;
+    width: 85%; /* 슬라이드 너비 기준 90% */
+    text-align: left;
+}
+
+/* 두 줄 컬럼 주석 설명 */
+.main_practice_page .slide_annotation2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 0px;
+    width: 85%; /* 슬라이드 너비 기준 90% */
+    font-size: 13px;
+    color: black;
+    text-align: left;
+}
+
+.main_practice_page .slide_annotation2 .annotation2_col {
+    flex: 1 1 45%;
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+/* 사운드 리스트 */
+.main_practice_page .sound_list {
+    list-style: none;
+    padding-left: 0;
+    font-size: 16px;
+    text-align: left;
+    margin: 20px 15%;  /* ✅ 슬라이드 폭 기준 좌우 마진 설정 */
+}
+
+/* 사운드 리스트 항목 */
+.main_practice_page .sound_list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 사운드 버튼 */
+.main_practice_page .inline-sound {
+    background-color: transparent;
+    border: none;
+    padding: 4px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 아이콘 이미지 */
+.main_practice_page .inline-sound img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(0%) contrast(100%);
+    transition: transform 0.1s ease-in-out;
+}
+
+.main_practice_page .inline-sound:hover img {
+    transform: scale(1.1);
+}
 
 .main_practice_page .slide_footer {
     margin-top: auto;

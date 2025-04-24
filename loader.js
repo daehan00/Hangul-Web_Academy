@@ -1,7 +1,8 @@
+// ✅ loader.js - JSON 기반으로 main.html의 슬라이드를 동적으로 생성 및 intro.html 이동 처리
+
 async function loadSlidesFromJson(jsonPath, selectedWord) {
     try {
         const response = await fetch(jsonPath);
-        // console.log(response);
         const data = await response.json();
 
         const slidesContainer = document.querySelector(".slides");
@@ -17,7 +18,6 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
         let slides = [];
         if (data.entries && Array.isArray(data.entries)) {
             if (!selectedWord) {
-                // ✅ 읽기/듣기 등 단일 항목인 경우 첫 entry를 로드
                 selectedWord = data.entries[0].title;
             }
             const matchedEntry = data.entries.find(entry => entry.title === selectedWord);
@@ -33,8 +33,6 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
         } else {
             throw new Error("유효한 슬라이드 데이터를 찾을 수 없습니다.");
         }
-        // console.log("선택된 단어:", selectedWord);
-        // console.log("엔트리 제목 목록:", data.entries.map(e => e.title));
 
         slides.forEach(slide => {
             const slideEl = document.createElement("div");
@@ -69,52 +67,104 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
                 main.appendChild(iframe);
             }
 
-            if (slide.text) {
+            if (slide.text || slide.lines) {
                 const textBox = document.createElement("div");
                 textBox.className = slide.type === "video" ? "slide_video_main_text" : "slide_main_text";
-            
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(`<div>${slide.text}</div>`, 'text/html');
-                const container = doc.body.firstChild;
-            
-                if (selectedWord) {
-                    const regex = new RegExp(`(${selectedWord})`, 'gi');
-            
-                    function highlightTextNodes(node) {
-                        node.childNodes.forEach(child => {
-                            if (child.nodeType === Node.TEXT_NODE) {
-                                const original = child.textContent;
-                                if (regex.test(original)) {
-                                    const replaced = original.replace(regex, `<span style="color:red; font-weight:bold;">$1</span>`);
-                                    const spanContainer = document.createElement('span');
-                                    spanContainer.innerHTML = replaced;
-                                    node.replaceChild(spanContainer, child);
+
+                if (slide.text) {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(`<div>${slide.text}</div>`, 'text/html');
+                    const container = doc.body.firstChild;
+
+                    if (selectedWord) {
+                        const regex = new RegExp(`(${selectedWord})`, 'gi');
+                        function highlightTextNodes(node) {
+                            node.childNodes.forEach(child => {
+                                if (child.nodeType === Node.TEXT_NODE) {
+                                    const original = child.textContent;
+                                    if (regex.test(original)) {
+                                        const replaced = original.replace(regex, `<span style="color:red; font-weight:bold;">$1</span>`);
+                                        const spanContainer = document.createElement('span');
+                                        spanContainer.innerHTML = replaced;
+                                        node.replaceChild(spanContainer, child);
+                                    }
+                                } else if (child.nodeType === Node.ELEMENT_NODE) {
+                                    highlightTextNodes(child);
                                 }
-                            } else if (child.nodeType === Node.ELEMENT_NODE) {
-                                highlightTextNodes(child);
+                            });
+                        }
+                        highlightTextNodes(container);
+                    }
+                    textBox.appendChild(container);
+                }
+
+                if (slide.lines && Array.isArray(slide.lines)) {
+                    const ul = document.createElement("ul");
+                    ul.className = "sound_list";
+                    slide.lines.forEach(line => {
+                        const li = document.createElement("li");
+                        li.textContent = `${line.emoji} ${line.text}`;
+
+                        const btn = document.createElement("button");
+                        btn.className = "inline-sound";
+                        const icon = document.createElement("img");
+                        icon.src = "images/icons/megaphone.svg";
+                        btn.appendChild(icon);
+
+                        const audio = document.createElement("audio");
+                        audio.src = line.sound;
+                        btn.addEventListener("click", () => {
+                            if (audio.paused) {
+                                audio.play();
+                            } else {
+                                audio.pause();
                             }
                         });
-                    }
-            
-                    highlightTextNodes(container);
+                        li.appendChild(btn);
+                        li.appendChild(audio);
+                        ul.appendChild(li);
+                    });
+                    textBox.appendChild(ul);
                 }
-            
-                textBox.appendChild(container);
+
+                if (slide.conclusion) {
+                    const conclusion = document.createElement("div");
+                    conclusion.className = "slide_main_text";
+                    conclusion.innerHTML = slide.conclusion;
+                    textBox.appendChild(conclusion);
+                }
+
                 main.appendChild(textBox);
+            }
+
+            if (slide.annotation) {
+                const annotationBox = document.createElement("div");
+                annotationBox.className = "slide_annotation";
+                annotationBox.innerHTML = slide.annotation;
+                main.appendChild(annotationBox);
+            }
+
+            if (slide.annotation2 && Array.isArray(slide.annotation2)) {
+                const annotationBox = document.createElement("div");
+                annotationBox.className = "slide_annotation2";
+                slide.annotation2.forEach(colText => {
+                    const col = document.createElement("div");
+                    col.className = "annotation2_col";
+                    col.innerHTML = colText;
+                    annotationBox.appendChild(col);
+                });
+                main.appendChild(annotationBox);
             }
 
             if (slide.sound && typeof slide.sound === "string") {
                 const soundBtn = document.createElement("button");
                 soundBtn.className = "sound";
-            
                 const img = document.createElement("img");
                 img.src = "images/icons/megaphone.svg";
                 soundBtn.appendChild(img);
-            
+
                 const audio = document.createElement("audio");
                 audio.src = slide.sound;
-            
-                // ✅ 일시정지/재생 토글
                 soundBtn.addEventListener("click", () => {
                     if (audio.paused) {
                         audio.play();
@@ -122,7 +172,7 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
                         audio.pause();
                     }
                 });
-            
+
                 main.appendChild(soundBtn);
                 main.appendChild(audio);
             }

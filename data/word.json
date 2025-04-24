@@ -27,7 +27,7 @@
                     "subtitle": "예문을 확인해 봐요",
                     "image": "images/password2.png",
                     "text": "직원이 비밀번호를 누르라고 했어요.",
-                    "sound": "sounds/testspeech.mp3"
+                    "sound": "sounds/speech1.mp3"
                 },
                 {
                     "type": "quiz",
@@ -64,7 +64,7 @@
                     "subtitle": "예문을 확인해 봐요",
                     "image": "images/checkcard2.png",
                     "text": "저는 은행에서 체크카드를 만들었어요.",
-                    "sound": true
+                    "sound": "sounds/speech2.mp3"
                 },
                 {
                     "type": "quiz",
@@ -101,7 +101,7 @@
                     "subtitle": "예문을 확인해 봐요",
                     "image": "images/wait2.png",
                     "text": "저는 잠시 대기 공간에서 기다렸어요.",
-                    "sound": true
+                    "sound": "sounds/speech3.mp3"
                 },
                 {
                     "type": "quiz",
@@ -125,7 +125,7 @@
                 {
                     "type": "image",
                     "subtitle": "친구가 나에게 돈을 보내주고 싶어 해요. 친구에게 무엇을 알려줘야 할까요?",
-                    "image": "images/Testimg.jpg",
+                    "image": "images/number1.png",
                     "text": "카드를 만들 때 통장에 적혀 있는 숫자를 알려줘야 해요."
                 },
                 {
@@ -136,14 +136,14 @@
                 {
                     "type": "image",
                     "subtitle": "예문을 확인해 봐요",
-                    "image": "images/Testimg.jpg",
-                    "text": "은행에서 만들어준 내 계좌 번호는 260-203456-07051",
-                    "sound": true
+                    "image": "images/number2.png",
+                    "text": "은행에서 만들어준 내 계좌번호는 260-20034-560070-51",
+                    "sound": "sounds/speech4.mp3"
                 },
                 {
                     "type": "quiz",
                     "subtitle": "연습을 해보아요!",
-                    "image": "images/Testimg.jpg",
+                    "image": "images/number3.png",
                     "text": "질문에 알맞게 대답해 주세요!<br><br>Q: 내 통장에 돈을 넣으려면 카드말고 뭐가 필요해요?",
                     "answer": "계좌번호"
                 }
@@ -155,25 +155,25 @@
                 {
                     "type": "image",
                     "subtitle": "다른 나라의 돈을 한국 돈으로 바꿔본 적 있어요?",
-                    "image": "images/Testimg.jpg",
+                    "image": "images/change1.png",
                     "text": ""
                 },
                 {
                     "type": "video",
-                    "videoUrl": "유튜브링크",
+                    "videoUrl": "https://youtube.com/embed/hwW1FOXPM8k?si=AstlpD6ccyoGWaY7",
                     "text": "환전은 다른 나라의 돈을 한국 돈으로 바꾸는 것이에요.<br>예를 들면 미국 돈 달러를 한국 돈 원으로 바꾸는 걸 환전이라고 해요.<br>한국에서는 은행, 공항, 환전소에서 환전을 할 수 있어요."
                 },
                 {
                     "type": "image",
                     "subtitle": "예문을 확인해 봐요",
-                    "image": "images/Testimg.jpg",
+                    "image": "images/change2.png",
                     "text": "저는 은행에서 중국 돈을 한국 돈으로 환전했어요.<br>은행에서 환전을 하고 통장에 넣었어요.",
-                    "sound": true
+                    "sound": "sounds/speech5.mp3"
                 },
                 {
                     "type": "quiz",
                     "subtitle": "연습을 해보아요!",
-                    "image": "images/Testimg.jpg",
+                    "image": "images/change3.png",
                     "text": "질문에 알맞게 대답해 주세요!<br><br>Q: 한국 돈을 일본 돈으로 바꾸는 걸 뭐라고 해요?",
                     "answer": "환전"
                 }
