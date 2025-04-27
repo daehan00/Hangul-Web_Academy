@@ -462,6 +462,8 @@ footer {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--button-color);
+    border-radius: 100%;
 }
 
 /* 아이콘 이미지 */
@@ -475,6 +477,7 @@ footer {
 
 .main_practice_page .inline-sound:hover img {
     transform: scale(1.1);
+    background-color: var(--button-color-hover);
 }
 
 .main_practice_page .slide_footer {
@@ -522,4 +525,33 @@ footer {
     font-size: var(--font-size-small);
     color: #2e7d32;
     font-weight: bold;
+}
+
+.main_practice_page .ox-btn {
+    width: 50px; /* 버튼 크기 - 너비 */
+    height: 50px; /* 버튼 크기 - 높이 */
+    font-size: 20px; /* 버튼 안 글씨 크기 */
+    font-weight: bold;
+    border: 2px solid #999;
+    border-radius: 50%;
+    background-color: white;
+    color: #555;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 0; /* 내부 여백 제거 */
+}
+
+.main_practice_page .ox-btn.selected {
+    border-color: green;
+    background-color: var(--button-color-hover);
+    color: green;
+    position: relative;
+}
+
+.main_practice_page .ox-btn.selected::after {
+    content: '✔︎';
+    position: absolute;
+    top: -6px; /* ✔︎ 위치 살짝 수정 */
+    right: -6px;
+    font-size: 14px; /* 체크 마크 크기 */
 }

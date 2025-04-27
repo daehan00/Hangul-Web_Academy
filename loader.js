@@ -1,5 +1,7 @@
 // ✅ loader.js - JSON 기반으로 main.html의 슬라이드를 동적으로 생성 및 intro.html 이동 처리
 
+// ✅ loader.js - JSON 기반으로 main.html의 슬라이드를 동적으로 생성 및 intro.html 이동 처리
+
 async function loadSlidesFromJson(jsonPath, selectedWord) {
     try {
         const response = await fetch(jsonPath);
@@ -8,18 +10,14 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
         const slidesContainer = document.querySelector(".slides");
         const titleEl = document.querySelector(".main_title");
 
-        // ✅ 헤더 타이틀 업데이트 (추가 부분)
         const headerTitleEl = document.querySelector("#title h1");
         if (headerTitleEl && data.introTitle) {
             headerTitleEl.innerHTML = data.introTitle;
         }
 
-        // ✅ 선택한 단어가 있으면 entries에서 찾고 없으면 전체 슬라이드 사용
         let slides = [];
         if (data.entries && Array.isArray(data.entries)) {
-            if (!selectedWord) {
-                selectedWord = data.entries[0].title;
-            }
+            if (!selectedWord) selectedWord = data.entries[0].title;
             const matchedEntry = data.entries.find(entry => entry.title === selectedWord);
             if (matchedEntry && matchedEntry.slides) {
                 slides = matchedEntry.slides;
@@ -67,7 +65,7 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
                 main.appendChild(iframe);
             }
 
-            if (slide.text || slide.lines) {
+            if (slide.text || slide.lines || slide.questions) {
                 const textBox = document.createElement("div");
                 textBox.className = slide.type === "video" ? "slide_video_main_text" : "slide_main_text";
 
@@ -75,63 +73,16 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(`<div>${slide.text}</div>`, 'text/html');
                     const container = doc.body.firstChild;
-
-                    if (selectedWord) {
-                        const regex = new RegExp(`(${selectedWord})`, 'gi');
-                        function highlightTextNodes(node) {
-                            node.childNodes.forEach(child => {
-                                if (child.nodeType === Node.TEXT_NODE) {
-                                    const original = child.textContent;
-                                    if (regex.test(original)) {
-                                        const replaced = original.replace(regex, `<span style="color:red; font-weight:bold;">$1</span>`);
-                                        const spanContainer = document.createElement('span');
-                                        spanContainer.innerHTML = replaced;
-                                        node.replaceChild(spanContainer, child);
-                                    }
-                                } else if (child.nodeType === Node.ELEMENT_NODE) {
-                                    highlightTextNodes(child);
-                                }
-                            });
-                        }
-                        highlightTextNodes(container);
-                    }
                     textBox.appendChild(container);
                 }
 
-                if (slide.lines && Array.isArray(slide.lines)) {
-                    const ul = document.createElement("ul");
-                    ul.className = "sound_list";
-                    slide.lines.forEach(line => {
-                        const li = document.createElement("li");
-                        li.textContent = `${line.emoji} ${line.text}`;
-
-                        const btn = document.createElement("button");
-                        btn.className = "inline-sound";
-                        const icon = document.createElement("img");
-                        icon.src = "images/icons/megaphone.svg";
-                        btn.appendChild(icon);
-
-                        const audio = document.createElement("audio");
-                        audio.src = line.sound;
-                        btn.addEventListener("click", () => {
-                            if (audio.paused) {
-                                audio.play();
-                            } else {
-                                audio.pause();
-                            }
-                        });
-                        li.appendChild(btn);
-                        li.appendChild(audio);
-                        ul.appendChild(li);
+                if (slide.questions) {
+                    slide.questions.forEach((q, idx) => {
+                        const qEl = document.createElement("div");
+                        qEl.className = "quiz-inline-text";
+                        qEl.innerHTML = `${idx + 1}. ${q.text} ( )`;
+                        textBox.appendChild(qEl);
                     });
-                    textBox.appendChild(ul);
-                }
-
-                if (slide.conclusion) {
-                    const conclusion = document.createElement("div");
-                    conclusion.className = "slide_main_text";
-                    conclusion.innerHTML = slide.conclusion;
-                    textBox.appendChild(conclusion);
                 }
 
                 main.appendChild(textBox);
@@ -183,17 +134,57 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
             footer.className = "slide_footer";
 
             if (slide.type === "quiz") {
-                const input = document.createElement("input");
-                input.className = "quiz-input";
-                input.setAttribute("data-answer", slide.answer);
-                input.placeholder = "답을 입력하세요!";
+                if (slide.questions && slide.questions.length > 1) {
+                    // ✅ 다수 문제 처리 (OX 문제)
+                    const footerContent = document.createElement("div");
+                    footerContent.className = "quiz-footer-content";
 
-                const button = document.createElement("button");
-                button.className = "quiz-submit";
-                button.textContent = "제출";
+                    slide.questions.forEach((q, idx) => {
+                        const box = document.createElement("div");
+                        box.className = "quiz-footer-box";
+                        const label = document.createElement("span");
+                        label.textContent = `${idx + 1}.`;
 
-                footer.appendChild(input);
-                footer.appendChild(button);
+                        const oBtn = document.createElement("button");
+                        oBtn.className = "ox-btn";
+                        oBtn.textContent = "O";
+                        oBtn.dataset.value = "O";
+
+                        const xBtn = document.createElement("button");
+                        xBtn.className = "ox-btn";
+                        xBtn.textContent = "X";
+                        xBtn.dataset.value = "X";
+
+                        oBtn.addEventListener('click', () => selectOXButton(oBtn));
+                        xBtn.addEventListener('click', () => selectOXButton(xBtn));
+
+                        box.appendChild(label);
+                        box.appendChild(oBtn);
+                        box.appendChild(xBtn);
+                        footerContent.appendChild(box);
+                    });
+
+                    const button = document.createElement("button");
+                    button.className = "quiz-submit";
+                    button.textContent = "제출";
+                    button.addEventListener('click', () => handleOXQuizSubmit(slide.questions));
+
+                    footer.appendChild(footerContent);
+                    footer.appendChild(button);
+                } else {
+                    // ✅ 기본 문제 하나 처리 (입력형)
+                    const input = document.createElement("input");
+                    input.className = "quiz-input";
+                    input.setAttribute("data-answer", slide.answer);
+                    input.placeholder = "답을 입력하세요!";
+
+                    const button = document.createElement("button");
+                    button.className = "quiz-submit";
+                    button.textContent = "제출";
+
+                    footer.appendChild(input);
+                    footer.appendChild(button);
+                }
             } else {
                 footer.textContent = "아래로 넘기세요";
             }
@@ -202,9 +193,58 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
             slidesContainer.appendChild(slideEl);
         });
     } catch (err) {
-        // console.error("데이터 로딩 실패:", err);
+        console.error("데이터 로딩 실패:", err);
     }
 }
+
+function selectOXButton(btn) {
+    const siblings = btn.parentNode.querySelectorAll('.ox-btn');
+    siblings.forEach(s => s.classList.remove('selected'));
+    btn.classList.add('selected');
+}
+
+function handleOXQuizSubmit(questions) {
+    const quizBoxes = document.querySelectorAll('.quiz-footer-box');
+    let allCorrect = true;
+
+    quizBoxes.forEach((box, idx) => {
+        const selected = box.querySelector('.ox-btn.selected');
+        const correctAnswer = questions[idx].answer;
+
+        if (!selected) {
+            allCorrect = false;
+        } else if (selected.dataset.value !== correctAnswer) {
+            allCorrect = false;
+        }
+    });
+
+    if (allCorrect) {
+        alert('정답입니다!');
+
+        const slide = document.querySelector('.slide_quiz.active') || document.querySelector('.slide_quiz');
+        if (slide) {
+            const mainText = slide.querySelector('.slide_main_text') || slide.querySelector('.slide_video_main_text');
+            const image = slide.querySelector('.slide_main_image');
+            const footer = slide.querySelector('.slide_footer');
+
+            if (image) image.remove();
+
+            const explanation = document.createElement('div');
+            explanation.className = 'quiz-explanation';
+            
+            // 여러 문제를 하나의 문자열로 연결
+            const correctAnswersText = questions.map((q, i) => `${i + 1}. ${q.answer}`).join('  ');
+            explanation.innerText = `✅ 정답은 "${correctAnswersText}" 입니다. 잘 하셨어요!`;
+
+            if (mainText) mainText.appendChild(explanation);
+
+            if (footer) footer.style.display = 'none';
+        }
+    } else {
+        alert('틀린 답이 있습니다. 다시 확인해보세요.');
+    }
+}
+
 
 // ✅ intro.html에서 사용할 데이터 로딩
 async function loadIntroFromJson(jsonPath) {

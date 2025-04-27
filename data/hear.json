@@ -8,36 +8,44 @@
         {
           "type": "video",
           "subtitle": "은행에서 직원이랑 어떤 대화를 했어요?",
-          "videoUrl": "유튜브링크",
-          "text": "(선택)영상을 설명하는 글 추가"
+          "videoUrl": "https://www.youtube.com/embed/7-ePuuQtw9o?si=fuH3HknR96V1pPJc",
+          "text": ""
         },
         {
           "type": "image",
           "subtitle": "문장을 들어보세요!",
-          "image": "images/Testimg.jpg",
+          "image": "images/listen1.png",
           "text": "",
           "sound": "sounds/speech9.mp3"
         },
         {
           "type": "image",
           "subtitle": "들은 문장을 확인해보세요!",
-          "image": "images/Testimg.jpg",
+          "image": "",
           "text": "지영이가 수업이 끝나고 은행에 갔어요. 은행 직원이 친절하게 말했어요. \"안녕하세요. 어떤 업무를 도와드릴까요?\" 지영이가 답했어요. \"저는 체크카드를 만들고 싶어요.\" 직원이 지영이에게 신분증을 달라고 하고, 잠시 기다리라고 말했어요. 잠시 후에 직원이 카드를 만들어 줬어요.",
           "annotation": "*친절: 亲切, kindness, 親切<br>*업무: 业务, business, 業務<br>*신분증: 身份证, ID CARD, 身分証明書"
         },
         {
           "type": "quiz",
           "subtitle": "연습을 해보아요!",
-          "image": "images/Testimg.jpg",
-          "text": "위 대화를 듣고 질문에 답하세요.<br>Q: 지영이는 은행에 가서 뭐했어요?<br>1. 비밀번호를 만들었다.<br>2. 체크카드를 만들었다.<br>3. 환전을 했다.<br>A: _______",
+          "image": "images/listen1.png",
+          "text": "위 대화를 듣고 질문에 답하세요.<br>Q: 지영이는 은행에 가서 뭐했어요?<br><br>1. 비밀번호를 만들었다.<br>2. 체크카드를 만들었다.<br>3. 환전을 했다.<br>A: _______",
           "answer": "2"
         },
         {
           "type": "quiz",
           "subtitle": "연습을 해보아요!",
-          "image": "images/Testimg.jpg",
-          "text": "위 대화를 듣고, 맞으면 O, 틀리면 X로 답하세요.<br>1. 지영이는 수업 후에 은행을 갔어요. ( )<br>2. 지영이는 은행 직원에게 학생증을 보여줬어요. ( )",
-          "answer": "1. O    2. X"
+          "image": "images/listen1.png",
+          "questions": [
+            {
+              "text": "지영이는 수업 후에 은행을 갔어요.",
+              "answer": "O"
+            },
+            {
+              "text": "지영이는 은행 직원에게 학생증을 보여줬어요.",
+              "answer": "X"
+            }
+          ]
         }
       ]
     }
