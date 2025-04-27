@@ -18,13 +18,14 @@
         },
         {
           "type": "video",
-          "videoUrl": "https://youtube.com/embed/XoL5gXUlwew?si=kO19z_OpHovsSjNJ",
+          "videoUrl": "https://www.youtube.com/embed/XoL5gXUlwew?si=kO19z_OpHovsSjNJ",
           "text": "'부터'는 시작을 말할 때 쓰는 말이에요.<br>시간이나 순서에서 제일 먼저 하는 것을 말할 때 사용해요!"
         },
         {
           "type": "image",
           "subtitle": "기본 구조",
           "text": "명사 + '부터' + 동사",
+          "image": "",
           "lines": [
             {
               "emoji": "🕒",
@@ -91,13 +92,13 @@
           "type": "image",
           "subtitle": "활용형/활용 방법/불규칙 활용",
           "image": "",
-          "text": "📌 활용형: 현재 시제 동사 + '-는 동안'<br>예: 보다 → 보는 동안<br>📌 사용법: 두 개의 동작이 동시에 일어날 때 사용해요. 명사에는 사용하지 않아요.<br>예: 기다리는 동안 노래를 들었어요.<br>📌 주의: '살아요' → '사는 동안', '놀아요' → '노는 동안'"
+          "text": "📌 활용형: 현재 시제 동사 + '-는 동안'<br>예: 보다 → 보는 동안<br><br>📌 사용법: 두 개의 동작이 동시에 일어날 때 사용해요. 명사에는 사용하지 않아요.<br>예: 기다리는 동안 노래를 들었어요.<br><br>📌 주의: '살아요' → '사는 동안', '놀아요' → '노는 동안'"
         },
         {
           "type": "quiz",
           "subtitle": "연습을 해보아요!",
           "image": "images/dongan2.png",
-          "text": "은행에서 ________핸드폰을 봤어요.<br><small>-은행에서 기다리고 있어요. 기다리면서 핸드폰을 봤어요.</small>",
+          "text": "빈칸에 알맞게 대답해 주세요<br><br><strong>은행에서 ________핸드폰을 봤어요.</strong><br><br><small>hint: 은행에서 기다리고 있어요. 기다리면서 핸드폰을 봤어요.</small>",
           "answer": "기다리는 동안"
         },
         {

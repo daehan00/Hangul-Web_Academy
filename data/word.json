@@ -13,7 +13,7 @@
             "slides": [
                 {
                     "type": "image",
-                    "subtitle": "은행에서 카드를 만들었어요. 카드를 사용할 때 숫자를 눌러야 해요. 이 숫자를 뭐라고 해요?",
+                    "subtitle": "은행에서 카드를 만들었어요. 카드를 사용할 때 숫자를 눌러야 해요.<br>이 숫자를 뭐라고 해요?",
                     "image": "images/password1.png",
                     "text": "다른 사람에게 말하면 안되는 숫자에요!"
                 },
@@ -130,14 +130,14 @@
                 },
                 {
                     "type": "video",
-                    "videoUrl": "유튜브링크",
+                    "videoUrl": "https://www.youtube.com/embed/b1qR5WJSVq8?si=rlIzI1QC0n9e8taw",
                     "text": "영상에서 통장이 나왔죠? 통장 첫 장 위에 적힌 숫자가 계좌번호예요.<br>내 통장의 번호에요.<br>돈을 주거나 받을 때 꼭 필요해요!"
                 },
                 {
                     "type": "image",
                     "subtitle": "예문을 확인해 봐요",
                     "image": "images/number2.png",
-                    "text": "은행에서 만들어준 내 계좌번호는 260-20034-560070-51",
+                    "text": "은행에서 만들어준 내 계좌번호는<br>260-20034-560070-51 이에요.",
                     "sound": "sounds/speech4.mp3"
                 },
                 {
@@ -154,7 +154,7 @@
             "slides": [
                 {
                     "type": "image",
-                    "subtitle": "다른 나라의 돈을 한국 돈으로 바꿔본 적 있어요?",
+                    "subtitle": "다른 나라의 돈을 한국 돈으로<br>바꿔본 적 있어요?",
                     "image": "images/change1.png",
                     "text": ""
                 },

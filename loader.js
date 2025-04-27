@@ -1,7 +1,5 @@
 // ✅ loader.js - JSON 기반으로 main.html의 슬라이드를 동적으로 생성 및 intro.html 이동 처리
 
-// ✅ loader.js - JSON 기반으로 main.html의 슬라이드를 동적으로 생성 및 intro.html 이동 처리
-
 async function loadSlidesFromJson(jsonPath, selectedWord) {
     try {
         const response = await fetch(jsonPath);
@@ -39,7 +37,7 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
             if (slide.subtitle) {
                 const subtitleEl = document.createElement("div");
                 subtitleEl.className = "slide_subtitle";
-                subtitleEl.textContent = slide.subtitle;
+                subtitleEl.innerHTML = slide.subtitle;
                 slideEl.appendChild(subtitleEl);
             }
 
@@ -65,7 +63,7 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
                 main.appendChild(iframe);
             }
 
-            if (slide.text || slide.lines || slide.questions) {
+            if (slide.text || slide.lines) {
                 const textBox = document.createElement("div");
                 textBox.className = slide.type === "video" ? "slide_video_main_text" : "slide_main_text";
 
@@ -73,6 +71,26 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(`<div>${slide.text}</div>`, 'text/html');
                     const container = doc.body.firstChild;
+
+                    if (selectedWord) {
+                        const regex = new RegExp(`(${selectedWord})`, 'gi');
+                        function highlightTextNodes(node) {
+                            node.childNodes.forEach(child => {
+                                if (child.nodeType === Node.TEXT_NODE) {
+                                    const original = child.textContent;
+                                    if (regex.test(original)) {
+                                        const replaced = original.replace(regex, `<span style="color:red; font-weight:bold;">$1</span>`);
+                                        const spanContainer = document.createElement('span');
+                                        spanContainer.innerHTML = replaced;
+                                        node.replaceChild(spanContainer, child);
+                                    }
+                                } else if (child.nodeType === Node.ELEMENT_NODE) {
+                                    highlightTextNodes(child);
+                                }
+                            });
+                        }
+                        highlightTextNodes(container);
+                    }
                     textBox.appendChild(container);
                 }
 
@@ -83,6 +101,42 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
                         qEl.innerHTML = `${idx + 1}. ${q.text} ( )`;
                         textBox.appendChild(qEl);
                     });
+                }
+
+                if (slide.lines && Array.isArray(slide.lines)) {
+                    const ul = document.createElement("ul");
+                    ul.className = "sound_list";
+                    slide.lines.forEach(line => {
+                        const li = document.createElement("li");
+                        li.textContent = `${line.emoji} ${line.text}`;
+
+                        const btn = document.createElement("button");
+                        btn.className = "inline-sound";
+                        const icon = document.createElement("img");
+                        icon.src = "images/icons/megaphone.svg";
+                        btn.appendChild(icon);
+
+                        const audio = document.createElement("audio");
+                        audio.src = line.sound;
+                        btn.addEventListener("click", () => {
+                            if (audio.paused) {
+                                audio.play();
+                            } else {
+                                audio.pause();
+                            }
+                        });
+                        li.appendChild(btn);
+                        li.appendChild(audio);
+                        ul.appendChild(li);
+                    });
+                    textBox.appendChild(ul);
+                }
+
+                if (slide.conclusion) {
+                    const conclusion = document.createElement("div");
+                    conclusion.className = "slide_main_text";
+                    conclusion.innerHTML = slide.conclusion;
+                    textBox.appendChild(conclusion);
                 }
 
                 main.appendChild(textBox);
@@ -192,6 +246,22 @@ async function loadSlidesFromJson(jsonPath, selectedWord) {
             slideEl.appendChild(footer);
             slidesContainer.appendChild(slideEl);
         });
+
+        // ✅ 마지막 수고 메세지 슬라이드 추가
+        const finishSlide = document.createElement("div");
+        finishSlide.classList.add("slide_finish", "slide");
+
+        const finishMain = document.createElement("div");
+        finishMain.className = "slide_main";
+
+        const finishText = document.createElement("div");
+        finishText.className = "finish_text";
+        finishText.innerHTML = "수고하셨습니다!<br><br>다음으로 넘어가세요!";
+
+        finishMain.appendChild(finishText);
+        finishSlide.appendChild(finishMain);
+
+        slidesContainer.appendChild(finishSlide);
     } catch (err) {
         console.error("데이터 로딩 실패:", err);
     }

@@ -9,7 +9,7 @@
           "type": "video",
           "subtitle": "은행에서 직원이랑 어떤 대화를 했어요?",
           "videoUrl": "https://www.youtube.com/embed/7-ePuuQtw9o?si=fuH3HknR96V1pPJc",
-          "text": ""
+          "text": "체크카드 만들러 은행을 갔어요."
         },
         {
           "type": "image",
@@ -36,6 +36,7 @@
           "type": "quiz",
           "subtitle": "연습을 해보아요!",
           "image": "images/listen1.png",
+          "text": "맞으면 O, 틀리면 X로 답하세요.",
           "questions": [
             {
               "text": "지영이는 수업 후에 은행을 갔어요.",
